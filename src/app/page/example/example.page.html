@@ -1,0 +1,49 @@
+<app-header [title]=headerTitle [subtitle]=subTitle></app-header>
+
+<ion-content class="ion-padding">
+  
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Nombre de la mascota</ion-label>
+      <ion-input type="text" placeholder="Nombre." [(ngModel)]="dogName" clearInput></ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Color de la mascota</ion-label>
+      <ion-select [(ngModel)]="dogColor" okText="Aceptar" cancelText="Cancelar">
+        <ion-select-option value="Blanco">Blanco</ion-select-option>
+        <ion-select-option value="Negro">Negro</ion-select-option>
+        <ion-select-option value="Marrón">Marrón</ion-select-option>
+        <ion-select-option value="Otro">Otro</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Edad de la mascota</ion-label>
+      <ion-input type="number" [(ngModel)]="dogYearOld"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Raza de la mascota</ion-label>
+      <ion-select [(ngModel)]="dogBreed" value="" okText="Aceptar" cancelText="Cancelar">
+        <ion-select-option value="Dóberman">Dóberman</ion-select-option>
+        <ion-select-option value="Pitbull">Pitbull</ion-select-option>
+        <ion-select-option value="Chihuahua">Chihuahua</ion-select-option>
+        <ion-select-option value="Otro">Otro</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  <ion-button expand="block" color="dark" (click)="insertMascot()">Registrar datos</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let value of animalArray;let key=index" class="ion-no-padding">
+      <ion-label>
+        <div>{{value.name}}</div>
+        <div><small>Color: {{value.color}}</small></div>
+        <div><small style="color: #999999;">Edad: {{value.yearOld}}</small></div>
+        <div><small>Raza: {{value.breed}}</small></div>
+      </ion-label>
+      <ion-icon *ngIf="value.color=='Marrón'" name="code-working-outline" slot="end"></ion-icon>
+      <ion-icon *ngIf="value.color!='Marrón'" name="contract-outline" slot="end"></ion-icon>
+      <ion-button (click)="deleteMascot(key)" expand="block" size="small" color="primary">Eliminar</ion-button>
+      <ion-button expand="block" size="small" color="primary">Modificar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

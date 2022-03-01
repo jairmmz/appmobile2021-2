@@ -1,0 +1,11 @@
+<app-header [title]=headerTitle [subtitle]=subTitle></app-header>
+
+<ion-content class="ion-padding">
+  <ion-item *ngFor="let value of arrayLanguage" class="ion-no-padding">
+    <ion-label>
+      <div>{{value.name}}</div>
+    </ion-label>
+    <ion-button (click)="ghs.modalEditLanguage(value.idLanguage, value.name)" expand="block" size="small"  color="primary">Modificar</ion-button>
+    <ion-button (click)="deleteLanguage(value.idLanguage)" expand="block" size="small" color="danger">Eliminar</ion-button>
+  </ion-item>
+</ion-content>

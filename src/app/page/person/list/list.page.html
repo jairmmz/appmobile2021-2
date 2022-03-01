@@ -1,0 +1,14 @@
+<app-header [title]=headerTitle [subtitle]=subTitle></app-header>
+
+<ion-content class="ion-padding">
+  <ion-item *ngFor="let value of arrayListFavoriteLanguage" class="ion-no-padding">
+    <ion-label>
+      <div><b>Nombre: </b>{{value.firstName}}</div>
+      <div><b>Apellidos: </b>{{value.surName}}</div>
+      <div><b>Edad: </b>{{value.birthDate}}</div>
+      <div><b>Genero</b>{{value.gender}}</div>
+      <div><b>Estatura: </b>{{value.height}}</div>
+      <div><b>Lenguaje favorito: </b>{{value.name}}</div>
+    </ion-label>
+  </ion-item>
+</ion-content>

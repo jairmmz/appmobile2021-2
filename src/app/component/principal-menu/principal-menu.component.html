@@ -1,0 +1,22 @@
+<ion-menu side="start" menuId="principalMenu" contentId="mainPrincipal">
+	<ion-header>
+		<ion-toolbar color="primary">
+			<ion-title>Menu</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+		<ion-list>
+			<ion-item *ngFor="let value of menuOpcions" (click)="goToPage(value.route)">
+				{{value.optionName}}
+				<ion-icon *ngIf="value.optionName=='Página principal'" name="home-outline" slot="start"></ion-icon>
+				<ion-icon *ngIf="value.optionName=='Calculadora'" name="calculator-outline" slot="start"></ion-icon>
+				<ion-icon *ngIf="value.optionName=='Mantenimiento de Mascotas'" name="nuclear-outline" slot="start">
+				</ion-icon>
+				<ion-icon *ngIf="value.optionName=='Lenguaje'" name="language-outline" slot="start"></ion-icon>
+				<ion-icon *ngIf="value.optionName=='Lista de Lenguajes'" name="layers-outline" slot="start"></ion-icon>
+				<ion-icon *ngIf="value.optionName=='Persona'" name="person-add-outline" slot="start"></ion-icon>
+				<ion-icon *ngIf="value.optionName=='Listado de Persona con su Lenguage'" name="person-add-outline" slot="start"></ion-icon>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-menu>

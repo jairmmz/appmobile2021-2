@@ -1,0 +1,8 @@
+{
+  "name": "appSuma",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

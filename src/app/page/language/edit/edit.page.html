@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Modificación de Lenguage
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="frmEditLanguage">
+    <ion-item class="ion-no-padding" class="hidden-id">
+      <ion-input type="text" formControlName="idLanguage"></ion-input>
+    </ion-item>
+
+    <!-- <div class="divErrorMessage">
+      <ion-label *ngIf="idFv.hasError('required') && idFv.dirty">Este campo es requerido</ion-label>
+    </div> -->
+
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Nombre del lenguage:</ion-label>
+      <ion-input type="text" formControlName="name" required></ion-input>
+    </ion-item>
+
+    <div class="divErrorMessage">
+      <ion-label *ngIf="nameFv.hasError('required') && nameFv.dirty">Este campo es requerido</ion-label>
+    </div>
+
+    <!-- <ion-button type="submit" expand="block" size="small" color="primary" (click)="closeModal()">Cancelar</ion-button> -->
+    <ion-button type="submit" expand="block" size="small" color="primary" (click)="editFrmLanguage()">Guardar
+    </ion-button>
+    <ion-button type="submit" expand="block" size="small" color="secondary" (click)="goToPage()">Atras
+    </ion-button>
+  </form>
+
+</ion-content>

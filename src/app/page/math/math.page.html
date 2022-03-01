@@ -1,0 +1,35 @@
+<app-header [title]=headerTitle [subtitle]=subTitle></app-header>
+
+<ion-content>
+	<div class="ion-padding">
+		<ion-item class="ion-no-padding" style="font-size: 24px;">
+			<ion-label position="stacked">Primer Número:</ion-label>
+			<ion-input [(ngModel)]="numberOne"></ion-input>
+		</ion-item>
+		<ion-item class="ion-no-padding" style="font-size: 24px;">
+			<ion-label position="stacked">Segundo Número:</ion-label>
+			<ion-input [(ngModel)]="numberTwo"></ion-input>
+		</ion-item>
+		<ion-grid class="ion-no-padding">
+			<ion-row>
+				<ion-col size="3">
+					<ion-button expand="full" color="dark" size="small" (click)="addNumbers()">+</ion-button>
+				</ion-col>
+				<ion-col size="3">
+					<ion-button expand="full" color="dark" size="small" (click)="removeNumbers()">-</ion-button>
+				</ion-col>
+				<ion-col size="3">
+					<ion-button expand="full" color="dark" size="small" (click)="multiplyNumbers()">x</ion-button>
+				</ion-col>
+				<ion-col size="3">
+					<ion-button expand="full" color="dark" size="small" (click)="divideNumbers()">/</ion-button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		<div id="divResult" [ngStyle]="
+		{
+			'color': addResult!='Operación incorrecta' ? '#000000' : 'red',
+			'font-size': addResult!='Operación incorrecta' ? '35px' : '25px'
+		}">{{addResult}}</div>
+	</div>
+</ion-content>

@@ -1,0 +1,17 @@
+<app-header [title]=headerTitle [subtitle]=subTitle></app-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="frmInsertLanguage">
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Nombre del lenguage:</ion-label>
+      <ion-input type="text" formControlName="name" required></ion-input>
+    </ion-item>
+
+    <div class="divErrorMessage">
+      <ion-label *ngIf="nameFv.hasError('required') && nameFv.dirty">Este campo es requerido</ion-label>
+    </div>
+
+    <ion-button type="submit" expand="block" color="dark" (click)="sendFrmLanguage()">Registrar datos</ion-button>
+  </form>
+
+</ion-content>
